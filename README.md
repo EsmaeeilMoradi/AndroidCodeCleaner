@@ -52,7 +52,7 @@ Your support helps fund the next big features, such as:
 
 | Crypto Currency | Address | QR Code |
 | :--- | :--- | :--- |
-| **Ethereum (ETH)** | `0x2c6497d4492cdBAbB38D226353d5C656d4D71eB8` | **<img src="assets/eth_qrcode.png" width="100"/>** |
+| **Ethereum (ETH)** | `0x2c6497d4492cdBAbB38D226353d5C656d4D71eB8` | **<img src="assets/eth_qrcode.jpg" width="100"/>** |
 | **Pay via Trust Wallet Link:** | <a href="https://link.trustwallet.com/send?coin=60&address=0x2c6497d4492cdBAbB38D226353d5C656d4D71eB8">Click to Donate</a> | - |
 
 Thank you for your support!
