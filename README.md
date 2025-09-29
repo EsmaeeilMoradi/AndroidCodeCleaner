@@ -1,47 +1,58 @@
 # 🤖 AndroidCodeCleaner
 
-**Simple, yet powerful Kotlin Script to identify dead resources and unnecessary files in Android projects.**
+**The essential Kotlin Script suite for Senior Android Engineers to eliminate Technical Debt, shrink APK size, and boost build speeds.**
 
 ---
 
-## 🎯 The Problem: Silent Technical Debt
+## 🎯 The Problem: Invisible Technical Debt
 As a **Senior Android Engineer** specializing in architectural health, I know that **Technical Debt** isn't just about messy code—it's about slow build times, large APK size, and decreased team productivity.
 
-The first, easiest, and often overlooked step in cleaning up this debt is removing **dead resources** (unused drawables, old icons, forgotten layouts, and XML files) that silently bloat your codebase.
+Cleaning up this debt requires hunting down both **dead resources** and **dead Kotlin/Java code** that silently bloat your codebase.
 
 > 💡 **For a deeper dive into the cost of this problem, see my analysis on the Uber Driver App's architectural overhaul:** [Lessons from the Uber Driver App Rewrite](https://www.linkedin.com/posts/esmaeeil-moradi700_technical-debt-uber-activity-7376190784598994946-aCOl?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWuvhABqcAOz8yTpJZ-60zMobpn48jMb6w)
 
 ---
 
-## 🚀 Real-World Proof: The Unstoppable Wallet Test
-To prove its effectiveness, we ran `AndroidCodeCleaner` on the highly reputable and well-maintained open-source project, **[Unstoppable Wallet](https://github.com/horizontalsystems/unstoppable-wallet-android)**.
+## 🚀 Real-World Proof: The Unstoppable Wallet Test (V2 Update)
+To prove the suite's effectiveness, we ran both detectors on the highly reputable and well-maintained open-source project, **[Unstoppable Wallet](https://github.com/horizontalsystems/unstoppable-wallet-android)**.
 
-| Metric | Result |
-| :--- | :--- |
-| Total Resource Files Scanned | **351** files |
-| Total Code/XML Files Scanned | **1,497** files |
-| **Dead Resources Identified** | **17 critical resources!** |
+### **Results Summary**
+| Detector | Metric | Result |
+| :--- | :--- | :--- |
+| **Resource Detector** | Dead Resources Identified | **17 critical resources!** |
+| **Dead Code Detector** | Dead Declarations Found | **66 potentially unused classes/methods!** |
 
-**Conclusion:** This tool found **17 forgotten resources** ready for deletion, even in a well-managed codebase. This proves its precision and immediate value.
+**Conclusion:** The **AndroidCodeCleaner** suite found a combined total of **83 items** ready for deletion in a professional codebase, proving its precision and immediate value.
 
 ---
 
 ## ⚙️ How to Use (30-Second Setup)
-`AndroidCodeCleaner` is built on Kotlin Script, requiring minimal setup and no complex Gradle configuration.
+The tools are built on Kotlin Script, requiring minimal setup and no complex Gradle configuration.
 
 ### Prerequisites
 Make sure you have the [Kotlin command-line compiler](https://kotlinlang.org/docs/command-line.html) installed on your system.
 
-### Running the Script
-1.  Place the `scripts/find_unused_resources.kts` file in the root of your Android project (the same level as your `app/` folder).
-2.  Run the script directly from your terminal:
+### 1. Resource Detector (find_unused_resources.kts)
+Hunts for unused drawables, layouts, and XML files.
 
 ```bash
 kotlinc -script scripts/find_unused_resources.kts
 ```
-**Note:** This tool only **reports** files; it **does not delete** anything. Manual review and deletion are required.
+### 2. Dead Code Detector (find_dead_code.kts) - NEW!
+Hunts for unused Kotlin/Java classes and functions using advanced static analysis.
+
+```bash
+kotlinc -script scripts/find_dead_code.kts
+```
+**Note:** Both tools only report items; they do not delete anything. Manual review is required.
 
 ---
+## 💡 Roadmap to Pro
+The current scripts provide powerful baseline analysis. The next version, **AndroidCodeCleaner Pro**, will be a **paid offering** that directly addresses the needs of professional teams:
+* **Automated CI/CD Integration:** Direct integration with GitHub Actions/GitLab CI.
+* **Advanced Dependency Analysis:** Accurate detection of code used via Reflection, Dagger/Hilt, and complex runtime structures.
+* **Exportable Reports:** Detailed, exportable HTML/PDF reports for technical debt review meetings.
+
 
 ## 🤝 Support Development (Crypto Donations)
 This tool is built and maintained **completely free** for the Android community by an experienced architect. If `AndroidCodeCleaner` saved you time and helped clean up your project, please consider supporting its ongoing development.
